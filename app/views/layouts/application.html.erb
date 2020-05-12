@@ -20,7 +20,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <div class="navbar-nav mr-auto w-100 d-flex justify-content-between align-items-center">
             <div class="nav-item">
-              <a class="nav-link ml-2" href=<%= new_event_path %> >Create a new event<span class="sr-only">(current)</span></a>
+              <a class="nav-link ml-2 h6" href=<%= new_event_path %> >Create a new event<span class="sr-only">(current)</span></a>
             </div>
             <div class="nav-item">
               <% if !user_signed_in? %>
@@ -49,6 +49,12 @@
         </div>
       </nav>
     </header>
+
+    <% if user_signed_in? %>
+      <div class="mt-2 mr-3">
+        <p class="h6 text-right">You are connected as <%= current_user.first_name %> <%= current_user.last_name %></p>
+      </div>
+    <% end %>
 
     <% flash.each do |type, msg| %>
       <div class="alert alert-<%= type %> mt-1 py-1"><%= msg %></div>
