@@ -12,6 +12,9 @@ gem 'dotenv-rails'
 # gem used to generate random data
 gem 'faker'
 
+# gem used to pop up email in browser isntead of being send
+gem 'letter_opener'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.4', '>= 5.2.4.2'
 # Use postgresql as the database for Active Record
