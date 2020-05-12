@@ -17,14 +17,14 @@ ApplicationRecord.descendants.each { |model|
 
 # Create 5 users
 5.times { |index|
-  User.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, description: Faker::Quote.most_interesting_man_in_the_world, email: "user_#{index}@yopmail.com", password: 'wazo12')
+  User.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, description: Faker::Movies::HitchhikersGuideToTheGalaxy.quote, email: "user_#{index}@yopmail.com", password: 'wazo12')
 }
 
 # Create 10 events
 10.times { |index|
   Event.create!(
     title: Faker::Hacker.adjective,
-    description: Faker::Hacker.say_something_smart,
+    description: Faker::Movies::HitchhikersGuideToTheGalaxy.quote,
     start_date: Time.now + 24 * 60 * 60 * index,
     duration: Faker::Number.within(range: 6..24) * 5,
     price: Faker::Number.within(range: 1..1000),

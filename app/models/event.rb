@@ -20,7 +20,7 @@ class Event < ApplicationRecord
 
   validates :description,
     presence: true,
-    length: { in: 20..1000 }
+    length: { in: 5..1000 }
 
   validates :price,
     presence: true,
