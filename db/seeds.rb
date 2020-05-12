@@ -16,6 +16,19 @@ ApplicationRecord.descendants.each { |model|
 }
 
 # Create 5 users
-2.times { |index|
+5.times { |index|
   User.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, description: Faker::Quote.most_interesting_man_in_the_world, email: "user_#{index}@yopmail.com")
+}
+
+# Create 10 events
+10.times { |index|
+  Event.create!(
+    title: Faker::Hacker.adjective,
+    description: Faker::Hacker.say_something_smart,
+    start_date: Time.now + 24 * 60 * 60 * index,
+    duration: Faker::Number.within(range: 6..24) * 5,
+    price: Faker::Number.within(range: 1..1000),
+    location: Faker::Address.city,
+    admin_id: Faker::Number.within(range: 1..5)
+  )
 }

@@ -1,4 +1,8 @@
 class User < ApplicationRecord
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  devise :database_authenticatable, :registerable,
+          :recoverable, :rememberable, :validatable
   after_create :welcome_send
   
   # Set association config
@@ -7,18 +11,18 @@ class User < ApplicationRecord
   has_many :events, foreign_key: 'admin_id', class_name: 'Event'
   
   # Set validatios config
-  # validates :first_name,
-  # presence: true
+  validates :first_name,
+  presence: true
   
-  # validates :last_name,
-  # presence: true
+  validates :last_name,
+  presence: true
   
-  # validates :email,
-  # presence: true,
-  # uniqueness: true,
-  # format: { 
-  #   with: /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/, message: 'Please enter a valid email.'
-  # }
+  validates :email,
+  presence: true,
+  uniqueness: true,
+  format: { 
+    with: /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/, message: 'Please enter a valid email.'
+  }
   
   private
   def welcome_send
