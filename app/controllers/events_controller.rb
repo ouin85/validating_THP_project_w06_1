@@ -15,7 +15,7 @@ class EventsController < ApplicationController
     @event = Event.new(event_params.merge({admin: current_user}))
     if @event.save
       flash[:info] = 'Event successfully created'
-      redirect_to root_path
+      redirect_to event_path(@event.id)
     else
       render :new
     end

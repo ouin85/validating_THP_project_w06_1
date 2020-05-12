@@ -31,6 +31,11 @@ class Event < ApplicationRecord
 
   validate :duration_multiple_of_5
 
+  # Instance method
+  def end_date
+    self.start_date + duration * 60
+  end
+
   private
   def duration_multiple_of_5
     errors.add(:duration, 'must be multiple of 5') unless !duration || duration % 5 == 0
