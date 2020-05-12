@@ -1,7 +1,7 @@
 class Event < ApplicationRecord
   # Set associations config
-  has_many :attendances
-  has_many :users, through: :attendances
+  has_many :attendances, foreign_key: 'occasion_id', class_name: 'Attendance'
+  has_many :participants, through: :attendances
   belongs_to :admin, class_name: 'User'
 
   # Set validations config

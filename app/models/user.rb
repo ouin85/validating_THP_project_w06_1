@@ -6,8 +6,8 @@ class User < ApplicationRecord
   after_create :welcome_send
   
   # Set association config
-  has_many :attendances
-  has_many :events, through: :attendances
+  has_many :attendances, foreign_key: 'participant_id', class_name: 'Attendance'
+  has_many :occasions, through: :attendances
   has_many :events, foreign_key: 'admin_id', class_name: 'Event'
   
   # Set validatios config
