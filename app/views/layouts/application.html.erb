@@ -34,12 +34,14 @@
                   </div>
                 </div>
               <% else %>  
-                <button class="btn btn-info dropdown-toggle" href="#" role="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    My profile / Logout
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" href="#" >My profile</a>
-                  <a class="dropdown-item" href="#">Logout</a>
+                <div class="dropdown show">
+                  <button class="btn btn-info dropdown-toggle" href="#" role="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      My profile / Logout
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href= <%= user_path(current_user.id) %> >My profile</a>
+                    <%= link_to 'Logout', destroy_user_session_path, method: 'delete', class: "dropdown-item" %>
+                  </div>
                 </div>
               <% end %>
             </div>
@@ -47,6 +49,10 @@
         </div>
       </nav>
     </header>
+
+    <% flash.each do |type, msg| %>
+      <div class="alert alert-<%= type %> mt-1 py-1"><%= msg %></div>
+    <% end %>
     
     <%= yield %>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

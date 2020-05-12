@@ -17,7 +17,7 @@ ApplicationRecord.descendants.each { |model|
 
 # Create 5 users
 5.times { |index|
-  User.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, description: Faker::Quote.most_interesting_man_in_the_world, email: "user_#{index}@yopmail.com")
+  User.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, description: Faker::Quote.most_interesting_man_in_the_world, email: "user_#{index}@yopmail.com", password: 'wazo12')
 }
 
 # Create 10 events

@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="jumbotron alert alert-success mt-3">
+    <h1 class="text-uppercase font-weight-bold"><%= @event.title %></h1>
+    <h4> <%= @event.description %></h4>
+    <hr class="my-4">
+    <p class="mb-3"><span class="font-weight-bold">Start_date :</span> <%= @event.start_date. strftime('%d/%m/%Y at %I:%M %p') %></p>
+    <p class="h6"><span class="font-weight-bold">Duration : </span><%= @event.duration %></p>
+    <p class="h6"><span class="font-weight-bold">Location : </span><%= @event.location %></p>
+    <p class="h6"><span class="font-weight-bold">Price : </span><%= @event.price %> €</p>
+  </div>
+</div>

@@ -18,3 +18,11 @@
 {
   border: 10px black solid;
 }
+
+.img-circular
+{
+  display: block;
+  border-radius: 100px;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+}
