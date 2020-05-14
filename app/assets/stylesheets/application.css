@@ -16,12 +16,12 @@
 
 .user-pretty-border
 {
-  border: 5px rgba(32, 33, 36, 0.28) solid;
+  border: 5px #00afd8 solid;
 }
 
 .event-pretty-border
 {
-  border: 5px rgba(236, 95, 30, 0.986) solid;
+  border: 5px #f6b140 solid;
 }
 
 .box-shadow
