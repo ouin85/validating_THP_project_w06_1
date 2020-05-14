@@ -1,8 +1,8 @@
 <div class="container-fluid mt-3">
-  <p>You can create your beautiful event here !</p>
+  <p class="mb-1">You can create your beautiful event here !</p>
   <%= form_for @event do |f| %>
     <div class="row">
-      <div class="col-sm col-md-6 col-lg-4">
+      <div class="col-xs col-sm-6 col-md-4">
         <div class="form-group">
           <div>
             <%= f.label 'title', 'Title :', class: 'col-form-label' %>
@@ -12,7 +12,7 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-sm col-lg-6">
+      <div class="col-xs col-md-6">
         <div class="form-group">
           <div>
             <%= f.label 'description', 'Description :', class: 'col-form-label' %>
@@ -22,7 +22,7 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-sm col-md-4 col-lg-3">
+      <div class="col-sx col-sm-4 col-md-3">
         <div class="form-group">
           <div>
             <%= f.label 'start_date', 'Start date : ', class: 'col-form-label' %>
@@ -30,7 +30,7 @@
           </div>
         </div>
       </div>
-      <div class="col-sm col-md-4 col-lg-2">
+      <div class="col-xs col-ms-4 col-md-2">
         <div class="form-group">
           <div>
             <%= f.label 'duration', 'Duration : ', class: 'col-form-label' %>
@@ -40,7 +40,7 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-sm col-md-6 col-lg-4">
+      <div class="col-xs col-sm-6 col-md-4">
         <div class="form-group">
             <%= f.label 'location', 'Location :', class: 'col-form-label' %>
             <%= f.text_field :location, class: "form-control form-control-sm" %>
@@ -48,7 +48,7 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-sm col-md-3 col-lg-2">
+      <div class="col-xs col-sm-3 col-md-2">
         <div class="form-group">
             <%= f.label 'price', 'Price : ', class: 'col-form-label' %>
             <%= f.text_field :price, class: "form-control form-control-sm" %>

@@ -13,7 +13,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
-      flash[:info] = 'User seccessfully updated'
+      flash[:notice] = 'User seccessfully updated'
       redirect_to user_path(@user.id)
     else
       render :edit
@@ -23,8 +23,8 @@ class UsersController < ApplicationController
   private
   def is_current_user_showing?
     unless current_user.id.to_s == params[:id].to_s
-      flash[:danger] = "You can't display a profile that is not yours !"
-      redirect_to root_path
+      flash[:danger] = "Wise guy ! You can't display a profile that is not yours !"
+      redirect_to user_path(current_user.id)
     end
   end
 

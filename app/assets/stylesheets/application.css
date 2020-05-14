@@ -14,9 +14,19 @@
 *= require_self
 */
 
-.border
+.user-pretty-border
 {
-  border: 10px black solid;
+  border: 5px rgba(32, 33, 36, 0.28) solid;
+}
+
+.event-pretty-border
+{
+  border: 5px rgba(236, 95, 30, 0.986) solid;
+}
+
+.box-shadow
+{
+  box-shadow: 0px 2px 6px 1px rgba(32, 33, 36, 0.28);
 }
 
 .img-circular
@@ -25,4 +35,9 @@
   border-radius: 100px;
   -webkit-border-radius: 100px;
   -moz-border-radius: 100px;
+}
+
+p
+{
+  word-wrap: break-word;
 }
