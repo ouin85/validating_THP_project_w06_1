@@ -10,4 +10,9 @@ Rails.application.routes.draw do
   
   # Set events_contrller routes
   resources :events
+
+  # Set attendances_controler routes
+  resources :events do
+    resources :attendances
+  end
 end

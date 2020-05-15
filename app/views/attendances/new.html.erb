@@ -1,0 +1,7 @@
+<div class="container">
+  <%= form_for Attendance.new, url: event_attendances_path(@event.id) do |f| %>
+    <input type="hidden" name="occasion_id" value=<%= @event.id %> >
+    <input type="hidden" name="participant_id" value=<%= current_user.id%> >
+    <%= submit_tag 'Send', class: 'btn btn-success' %>
+  <% end %>
+</div>

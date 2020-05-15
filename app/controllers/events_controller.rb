@@ -1,5 +1,6 @@
 class EventsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
+  before_action :no_rights_to_edit_event, only: [:edit]
 
   def index
     @events = Event.all
@@ -23,7 +24,30 @@ class EventsController < ApplicationController
     end
   end
   
+  def edit
+    @event = Event.find(params[:id])
+  end
+
+  def update
+    @event = Event.find(params[:id])
+    if @event.update(event_params)
+      flash[:notice] = 'Event successfully updated !'
+      redirect_to event_attendances_path(@event.id)
+    else
+      render :edit
+    end
+  end
+
+  private
   def event_params
     params.require(:event).permit(:title, :description, :start_date, :duration, :location, :price)
+  end
+
+  def no_rights_to_edit_event
+    @event = Event.find(params[:id])
+    unless is_event_admin_of?(@event)
+      flash[:danger] = "You aren't rights to edit this event informations !"
+      redirect_to event_path(@event.id)
+    end
   end
 end
