@@ -15,8 +15,11 @@ gem 'faker'
 # gem used to pop up email in browser isntead of being send
 gem 'letter_opener'
 
-# devise
+# devise gem
 gem 'devise'
+
+# stripe a gem to allow perform payment
+gem 'stripe'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.4', '>= 5.2.4.2'

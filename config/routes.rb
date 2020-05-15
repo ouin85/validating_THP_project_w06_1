@@ -15,4 +15,8 @@ Rails.application.routes.draw do
   resources :events do
     resources :attendances
   end
+
+  # Set charges_controller routes
+  resources :charges
+  
 end

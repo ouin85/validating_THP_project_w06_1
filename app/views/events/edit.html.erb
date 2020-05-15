@@ -1,4 +1,9 @@
 <div class="container-fluid mt-3">
+  <div class="mb-3">
+    <%= form_for @event, url: event_path(@event.id), method: 'delete' do |f| %>
+      <%= submit_tag 'Delete event', class: 'btn btn-danger btn-sm' %>
+    <% end %>
+  </div>
   <p class="mb-1">You can edit your beautiful event here !</p>
   <%= form_for @event do |f| %>
     <div class="row">
@@ -55,7 +60,7 @@
         </div>
       </div>
     </div>
-    <%= submit_tag "Update event", class: "btn btn-info btn-sm" %>
+    <%= submit_tag "Update", class: "btn btn-info btn-sm" %>
   <% end %>
 
   <% if @event.errors.any? %>

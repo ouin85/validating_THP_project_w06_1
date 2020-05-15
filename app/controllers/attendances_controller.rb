@@ -1,4 +1,5 @@
 class AttendancesController < ApplicationController
+  before_action :authenticate_user!
   before_action :not_able_to_register_to_event, only: [:new]
   before_action :no_rights_to_show_event_attendances, only: [:index]
   
@@ -36,7 +37,7 @@ class AttendancesController < ApplicationController
   def no_rights_to_show_event_attendances
     @event = Event.find(params[:event_id])
     unless is_event_admin_of?(@event)
-      flash[:danger] = "Wise guy ! You can't show attendances of event for which you aren't admin !"
+      flash[:danger] = "You can't show attendances of event for which you aren't admin !"
       redirect_to event_path(@event.id)
     end
   end

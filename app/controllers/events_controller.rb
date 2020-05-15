@@ -38,6 +38,12 @@ class EventsController < ApplicationController
     end
   end
 
+  def destroy
+    @event = Event.find(params[:id])
+    Event.destroy(@event.id)
+    redirect_to user_path(@event.admin.id)
+  end
+
   private
   def event_params
     params.require(:event).permit(:title, :description, :start_date, :duration, :location, :price)
@@ -46,7 +52,7 @@ class EventsController < ApplicationController
   def no_rights_to_edit_event
     @event = Event.find(params[:id])
     unless is_event_admin_of?(@event)
-      flash[:danger] = "You aren't rights to edit this event informations !"
+      flash[:danger] = "You aren't rights to edit this event !"
       redirect_to event_path(@event.id)
     end
   end
