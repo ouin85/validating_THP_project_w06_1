@@ -17,6 +17,6 @@ Rails.application.routes.draw do
   end
 
   # Set charges_controller routes
-  resources :charges
+  resources   :charges
   
 end
