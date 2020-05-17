@@ -6,8 +6,6 @@ ruby '2.5.1'
 # gem used to print pretty SQL query results
 gem 'table_print'
 
-# gem used to hidden an important keys including API keys
-gem 'dotenv-rails'
 
 # gem used to generate random data
 gem 'faker'
@@ -57,6 +55,9 @@ gem 'bootsnap', '>= 1.1.0', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  
+  # gem used to hidden an important keys including API keys
+  gem 'dotenv-rails'
 end
 
 group :development do

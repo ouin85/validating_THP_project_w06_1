@@ -4,7 +4,7 @@ module EventsHelper
   end
 
   def is_already_registered_to?(event)
-    !Attendance.find_by(occasion_id: event.id, participant_id: current_user.id).nil?
+    event.participants.include? current_user
   end
 
   def is_able_to_register_to?(event)
